@@ -52,7 +52,7 @@ int main(){
 			case 4:
 				printf("\n\n DESPLEGAR AGENDA DE CONTACTOS\n\n");
 				mostrarLista();
-				break;ini
+				break;
 
 			case 5:
 				printf("\n\n Programa finalizado...");
