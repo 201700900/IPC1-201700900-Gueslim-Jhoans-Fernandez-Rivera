@@ -71,7 +71,7 @@ void insertar(){
 	printf(" Ingrese el codigo del nuevo contacto: ");
 	scanf("%d", &nuevo->codigo);
 	printf(" Ingrese el nombre del nuevo contacto: ");
-	scanf("%s",&nuevo->nombre);
+	scanf("%s",nuevo->nombre);
     	printf(" Ingrese la edad del nuevo contacto: ");
 	scanf("%d",&nuevo->edad);
 	printf(" Ingrese el telefono del nuevo contacto: ");
@@ -108,7 +108,7 @@ void modificar(){
 				printf("\n Ingrese el nuevo codigo para este contacto: ");
 				scanf("%d", &actual->codigo);
 				printf("\n Ingrese el nuevo nombre para este contacto: ");
-				scanf("%s", &actual->nombre);
+				scanf("%s", actual->nombre);
 				printf("\n Ingrese la nueva edad para este contacto: ");
 				scanf("%d", &actual->edad);
 				printf("\n Ingrese el nuevo telefono para este contacto: ");
