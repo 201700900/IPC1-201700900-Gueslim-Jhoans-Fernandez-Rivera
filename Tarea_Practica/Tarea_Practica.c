@@ -23,15 +23,15 @@ void desplegarListaUP();
 int main(){
 	int opcionMenu = 0;
 	do{
-        printf("\n|-----------------------|");
-		printf("\n|° AGENDA DE CONTACTOS °|");
-		printf("\n|-----------------------|");
-		printf("\n| 1. Insertar registro  |");
-		printf("\n| 2. Modificar registro |");
-		printf("\n| 3. Eliminar           |");
-        printf("\n| 4. Mostrar contactos  |");
-		printf("\n| 5. Salir              |");
-		printf("\n|-----------------------|");
+        	printf("\n-----------------------");
+		printf("\nÂ° AGENDA DE CONTACTOS Â°");
+		printf("\n-----------------------");
+		printf("\n 1. Insertar registro  ");
+		printf("\n 2. Modificar registro ");
+		printf("\n 3. Eliminar           ");
+        	printf("\n 4. Mostrar contactos  ");
+		printf("\n 5. Salir              ");
+		printf("\n-----------------------");
 		printf("\n\n Escoja una opcion: ");
 		scanf("%d", &opcionMenu);
 
@@ -72,7 +72,7 @@ void insertar(){
 	scanf("%d", &nuevo->codigo);
 	printf(" Ingrese el nombre del nuevo contacto: ");
 	scanf("%s",&nuevo->nombre);
-    printf(" Ingrese la edad del nuevo contacto: ");
+    	printf(" Ingrese la edad del nuevo contacto: ");
 	scanf("%d",&nuevo->edad);
 	printf(" Ingrese el telefono del nuevo contacto: ");
 	scanf("%d",&nuevo->telefono);
@@ -176,12 +176,12 @@ void mostrarLista(){
 	int numero = 1;
 	if(ini!=NULL){
 		while(actual != NULL){
-            printf("\n\n Contacto: %d", numero);
+            		printf("\n\n Contacto: %d", numero);
 			printf("\n\t Codigo: %d", actual->codigo);
-            printf("\n\t Nombre: %s", actual->nombre);
-            printf("\n\t Edad: %d", actual->edad);
-            printf("\n\t Telefono: %d", actual->telefono);
-            numero++;
+            		printf("\n\t Nombre: %s", actual->nombre);
+            		printf("\n\t Edad: %d", actual->edad);
+            		printf("\n\t Telefono: %d", actual->telefono);
+            		numero++;
 			actual = actual->sig;
 		}
 	}else{
