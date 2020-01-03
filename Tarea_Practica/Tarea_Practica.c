@@ -6,7 +6,7 @@ typedef struct nodo{
 	char nombre[20];
 	int edad;
 	int telefono;
-    struct nodo* sig;
+    	struct nodo* sig;
 	struct nodo* ant;
 } nodo;
 
