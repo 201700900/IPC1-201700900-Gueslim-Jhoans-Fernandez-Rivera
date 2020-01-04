@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//link del video: https://youtu.be/KzbC_RBcfng
+
 typedef struct nodo{
 	int codigo;
 	char nombre[20];
