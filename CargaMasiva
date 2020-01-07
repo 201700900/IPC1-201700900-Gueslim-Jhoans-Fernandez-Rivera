@@ -1,0 +1,76 @@
+static String path;
+
+    public void leerTableros(String ruta) {
+
+        BufferedReader bufferLectura = null;
+        String[] campos;
+        try {
+            // Abrir el .csv en buffer de lectura
+            bufferLectura = new BufferedReader(new FileReader(ruta));
+
+            // Leer una linea del archivo
+            String linea = bufferLectura.readLine();
+
+            while (linea != null) {
+                // Sepapar la linea leída con el separador definido previamente
+                campos = linea.split(",");
+
+                if (!campos[0].equals("Nombre")) {
+                    if (list.buscarTablero(campos[0])) {
+                        list.seRepiteNombre(campos[0], campos[3]);
+
+                    } else if (campos[2].equalsIgnoreCase("publico")) {
+                        list.insertarTablero(new Tablero(campos[0], campos[1], campos[2]));
+                    } else {
+                        list.insertarTablero(new Tablero(campos[0], campos[1], campos[2], campos[3]));
+                    }
+                }
+
+                // Volver a leer otra línea del fichero
+                linea = bufferLectura.readLine();
+            }
+        } catch (IOException e) {
+        } finally {
+            // Cierro el buffer de lectura
+            if (bufferLectura != null) {
+                try {
+                    bufferLectura.close();
+                } catch (IOException e) {
+                    System.out.println(e);
+                }
+            }
+        }
+    }
+
+    public void getRutaArchivo() {
+        try {
+
+            int resultado;
+            JFileChooser ventanita = new JFileChooser();
+            ventanita.setDialogTitle("Seleccione el archico");
+            ventanita.setAcceptAllFileFilterUsed(false);
+            FileNameExtensionFilter tipos = new FileNameExtensionFilter("CSV", "csv");
+            ventanita.setFileSelectionMode(JFileChooser.FILES_ONLY);
+            ventanita.setFileFilter(tipos);
+
+            resultado = ventanita.showOpenDialog(null);
+
+            if (JFileChooser.APPROVE_OPTION == resultado) {
+                File f = ventanita.getSelectedFile();
+                try {
+
+                    path = f.getAbsolutePath();
+                    leerTableros(path);
+
+                } catch (Exception ex) {
+                    System.out.println(ex);
+
+                }
+            }
+
+        } catch (HeadlessException ex) {
+            System.out.println(ex);
+
+        }
+
+    }
